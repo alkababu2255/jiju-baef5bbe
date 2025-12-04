@@ -30,7 +30,7 @@ const stats = [
   { icon: Users, value: "50,000+", label: "Patients Treated" },
   { icon: Award, value: "100+", label: "Expert Doctors" },
   { icon: Clock, value: "24/7", label: "Emergency Care" },
-  { icon: Shield, value: "25+", label: "Years of Trust" },
+  { icon: Shield, value: "New", label: "Modern Facility" },
 ];
 
 const features = [
@@ -117,7 +117,7 @@ export default function Home() {
                 Why Choose Us
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
-                Excellence in Healthcare Since 1999
+                Excellence in Healthcare Since 2024
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 At Jiju Hospital, we combine cutting-edge medical technology with compassionate care. Our team of experienced doctors and healthcare professionals are committed to providing personalized treatment for every patient.
