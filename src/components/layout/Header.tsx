@@ -63,9 +63,15 @@ export function Header() {
 
         {/* CTA Button */}
         <div className="hidden lg:block">
-          <Button asChild>
-            <Link to="/contact">Book Appointment</Link>
-          </Button>
+          {location.pathname === "/contact" ? (
+            <Button onClick={() => document.getElementById("appointment-form")?.scrollIntoView({ behavior: "smooth" })}>
+              Book Appointment
+            </Button>
+          ) : (
+            <Button asChild>
+              <Link to="/contact">Book Appointment</Link>
+            </Button>
+          )}
         </div>
 
         {/* Mobile Menu Button */}

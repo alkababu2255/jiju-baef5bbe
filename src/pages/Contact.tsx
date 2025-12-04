@@ -106,7 +106,7 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-card rounded-2xl p-6 md:p-8 shadow-card">
+              <div id="appointment-form" className="bg-card rounded-2xl p-6 md:p-8 shadow-card scroll-mt-24">
                 <h2 className="font-display text-2xl font-bold text-foreground mb-2">
                   Book an Appointment
                 </h2>
@@ -170,10 +170,10 @@ export default function Contact() {
                   
                   <Button type="submit" size="lg" disabled={isSubmitting}>
                     {isSubmitting ? (
-                      "Sending..."
+                      "Booking..."
                     ) : (
                       <>
-                        Send Message
+                        Book Appointment
                         <Send className="ml-2 h-4 w-4" />
                       </>
                     )}
