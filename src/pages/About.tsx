@@ -25,12 +25,10 @@ const values = [
 ];
 
 const milestones = [
-  { year: "1999", event: "Hospital Founded" },
-  { year: "2005", event: "Expanded to 200 beds" },
-  { year: "2010", event: "Launched Cardiac Center" },
-  { year: "2015", event: "Achieved NABH Accreditation" },
-  { year: "2020", event: "Opened Neuroscience Wing" },
-  { year: "2024", event: "Serving 50,000+ patients annually" },
+  { year: "2024", event: "Hospital Founded" },
+  { year: "2024", event: "Launched with 50 beds" },
+  { year: "2024", event: "Opened Cardiac Center" },
+  { year: "2025", event: "Expanding Services" },
 ];
 
 export default function About() {
@@ -44,10 +42,10 @@ export default function About() {
               About Us
             </span>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
-              Caring for Your Health Since 1999
+              Caring for Your Health Since 2024
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Jiju Hospital has been a pillar of healthcare excellence in the community for over 25 years. Our commitment to providing world-class medical services with a personal touch has made us one of the most trusted healthcare institutions in the region.
+              Jiju Hospital has been a pillar of healthcare excellence in the community. Our commitment to providing world-class medical services with a personal touch has made us one of the most trusted healthcare institutions in the region.
             </p>
           </div>
         </div>
