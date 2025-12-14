@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,16 +15,36 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const department = formData.get("department") as string;
+    const message = formData.get("message") as string;
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-appointment", {
+        body: { name, email, phone, department, message },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Appointment Request Sent!",
+        description: "We'll contact you shortly to confirm your appointment.",
+      });
+      
+      (e.target as HTMLFormElement).reset();
+    } catch (error: any) {
+      console.error("Error sending appointment:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send appointment request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
